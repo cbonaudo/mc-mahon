@@ -8,5 +8,7 @@ This will listen on a channel and trigger a fight, sent as message to the channe
 
 Run with :
 ```
-docker-compose up
+docker build -t "mcmahon" .
+
+docker run -d mcmahon
 ```

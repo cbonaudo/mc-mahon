@@ -1,5 +1,0 @@
-services:
-  mcmahon:
-    build:
-        context: ./
-        dockerfile: Dockerfile
