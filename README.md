@@ -1,4 +1,4 @@
-# McMahon
+# McMahon bot
 
 A discord bot made with Bastion and hexagonal architecture.
 
