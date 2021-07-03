@@ -47,10 +47,10 @@ async fn handle_users(ctx: BastionContext) -> Result<(), ()> {
 
                 let finisher = match random {
                     0 => format!("Oh my god! {} smashed {} to the troat and FIRED them from life!", get_finisher.victor, get_finisher.vanquished),
-                    1 => format!("{} shot an insane high kick at {} and send them flying!", get_finisher.victor, get_finisher.vanquished),
-                    2 => format!("Incredible! {} threw {} to the ground and is now kicking them inconscious!", get_finisher.victor, get_finisher.vanquished),
-                    3 => format!("A spectator passed a chair to {} who then slammed it right on {}'s skull! That's illegal, but not forbidden by the rules.", get_finisher.victor, get_finisher.vanquished),
-                    _ => format!("That's a 3rd cord jump from {}, right on {} that was already lying on the ground!", get_finisher.victor, get_finisher.vanquished),
+                    1 => format!("{} shot an INSANE! high kick at {} and sent them flying!", get_finisher.victor, get_finisher.vanquished),
+                    2 => format!("INCREDIBLE! {} threw {} to the ground and is now kicking them inconscious!", get_finisher.victor, get_finisher.vanquished),
+                    3 => format!("A spectator gave a chair to {} who then SLAMMED it right on {}'s skull! That's illegal, but not forbidden by the rules.", get_finisher.victor, get_finisher.vanquished),
+                    _ => format!("That's a THIRD CORD JUMP from {}, right on {} that was already lying on the ground!", get_finisher.victor, get_finisher.vanquished),
                 };
 
                 sender.reply(finisher).unwrap();

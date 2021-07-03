@@ -1070,27 +1070,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hexcord"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "async-std",
- "bastion",
- "chrono",
- "config",
- "job_scheduler",
- "once_cell",
- "rand 0.8.4",
- "serde 1.0.126",
- "serde_json",
- "serenity",
- "surf",
- "tokio 1.7.1",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "hkdf"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1494,6 +1473,27 @@ name = "maybe-uninit"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "60302e4db3a61da70c0cb7991976248362f30319e88850c487b9b95bbf059e00"
+
+[[package]]
+name = "mcmahon"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-std",
+ "bastion",
+ "chrono",
+ "config",
+ "job_scheduler",
+ "once_cell",
+ "rand 0.8.4",
+ "serde 1.0.126",
+ "serde_json",
+ "serenity",
+ "surf",
+ "tokio 1.7.1",
+ "tracing",
+ "tracing-subscriber",
+]
 
 [[package]]
 name = "memchr"
