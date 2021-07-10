@@ -336,6 +336,29 @@ dependencies = [
 [[package]]
 name = "bastion-executor"
 version = "0.4.1"
+source = "git+https://github.com/bastion-rs/bastion#44508cd4e7e323e90bf3548d979c6e0974cb1cc2"
+dependencies = [
+ "arrayvec 0.7.1",
+ "bastion-utils",
+ "crossbeam-channel",
+ "crossbeam-epoch 0.9.5",
+ "crossbeam-queue",
+ "crossbeam-utils 0.8.5",
+ "futures-timer",
+ "lazy_static",
+ "lever",
+ "libc",
+ "lightproc 0.3.6-alpha.0",
+ "num_cpus",
+ "once_cell",
+ "pin-utils",
+ "tracing",
+ "winapi 0.3.9",
+]
+
+[[package]]
+name = "bastion-executor"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "27dc6c4dc1295a173dd6043f87cd7c27245802cfecc8ad7b929760d73e193f5a"
 dependencies = [
@@ -350,29 +373,6 @@ dependencies = [
  "lever",
  "libc",
  "lightproc 0.3.5",
- "num_cpus",
- "once_cell",
- "pin-utils",
- "tracing",
- "winapi 0.3.9",
-]
-
-[[package]]
-name = "bastion-executor"
-version = "0.4.1"
-source = "git+https://github.com/bastion-rs/bastion#44508cd4e7e323e90bf3548d979c6e0974cb1cc2"
-dependencies = [
- "arrayvec 0.7.1",
- "bastion-utils",
- "crossbeam-channel",
- "crossbeam-epoch 0.9.5",
- "crossbeam-queue",
- "crossbeam-utils 0.8.5",
- "futures-timer",
- "lazy_static",
- "lever",
- "libc",
- "lightproc 0.3.6-alpha.0",
  "num_cpus",
  "once_cell",
  "pin-utils",
