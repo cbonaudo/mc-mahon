@@ -52,13 +52,14 @@ async fn handle_users(ctx: BastionContext) -> Result<(), ()> {
             .on_question(|get_finisher: GetFinisher, sender| {
                 tracing::info!("asked to get the finisher: {} vs {}", get_finisher.victor, get_finisher.vanquished);
 
-                let random: i32 = thread_rng().gen_range(0..5);
+                let random: i32 = thread_rng().gen_range(0..6);
 
                 let finisher = match random {
                     0 => format!("Oh my god! {} smashed {} to the troat and FIRED them from life!", get_finisher.victor, get_finisher.vanquished),
                     1 => format!("{} shot an INSANE! high kick at {} and sent them flying!", get_finisher.victor, get_finisher.vanquished),
                     2 => format!("INCREDIBLE! {} threw {} to the ground and is now kicking them inconscious!", get_finisher.victor, get_finisher.vanquished),
                     3 => format!("A spectator gave a chair to {} who then SLAMMED it right on {}'s skull! That's illegal, but not forbidden by the rules.", get_finisher.victor, get_finisher.vanquished),
+                    4 => format!("A spectator gave a Jupiler to {} who then climbed on the back of {} and BROKE the bottle on his skull!", get_finisher.victor, get_finisher.vanquished),
                     _ => format!("That's a THIRD CORD JUMP from {}, right on {} that was already lying on the ground!", get_finisher.victor, get_finisher.vanquished),
                 };
 
