@@ -24,7 +24,7 @@ async fn main() -> AnyResult<()> {
 
     // Context
     let fight_context =
-        domain::fight::Context::new("fight_adapter", "chat_adapter", String::from("Rabire"));
+        domain::fight::Context::new("fight_adapter", "chat_adapter", String::from("Rabs"));
 
     BASTION::start();
 
