@@ -30,12 +30,21 @@ async fn handle_users(ctx: BastionContext) -> Result<(), ()> {
             .on_question(|get_upper_hand: GetUpperHand, sender| {
                 tracing::info!("asked to get the upper hand: {} vs {}", get_upper_hand.fighter1, get_upper_hand.fighter2);
 
-                let mut randomized = vec![get_upper_hand.fighter1, get_upper_hand.fighter2];
-                randomized.shuffle(&mut thread_rng());
+                let upper_hand = if get_upper_hand.fighters().find(|fighter| *fighter == get_upper_hand.champion_name).is_some() {
+                    let vanquished = get_upper_hand.fighters().find(|fighter| *fighter != get_upper_hand.champion_name).unwrap_or_else(|| &get_upper_hand.champion_name).to_owned();
 
-                let upper_hand = UpperHand {
-                    victor: randomized[0].clone(),
-                    vanquished: randomized[1].clone(),
+                    UpperHand {
+                        victor: get_upper_hand.champion_name,
+                        vanquished,
+                    }
+                } else {
+                    let mut randomized = vec![get_upper_hand.fighter1, get_upper_hand.fighter2];
+                    randomized.shuffle(&mut thread_rng());
+
+                     UpperHand {
+                        victor: randomized[0].clone(),
+                        vanquished: randomized[1].clone(),
+                    }
                 };
 
                 sender.reply(upper_hand).unwrap();

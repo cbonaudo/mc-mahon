@@ -9,16 +9,18 @@ use super::dto::Fighters;
 pub struct Context {
     fight_adapter: Distributor,
     chat_adapter: Distributor,
+    champion_name: String,
 }
 
 impl Context {
-    pub fn new(fight_adapter_name: &str, chat_adapter_name: &str) -> Self {
+    pub fn new(fight_adapter_name: &str, chat_adapter_name: &str, champion_name: String) -> Self {
         let fight_adapter = Distributor::named(fight_adapter_name);
         let chat_adapter = Distributor::named(chat_adapter_name);
 
         Self {
             fight_adapter,
             chat_adapter,
+            champion_name,
         }
     }
 
@@ -26,7 +28,10 @@ impl Context {
         run!(async {
             let upper_hand: UpperHand = self
                 .fight_adapter
-                .request(GetUpperHand::from(fighters))
+                .request(GetUpperHand::for_fight(
+                    fighters,
+                    self.champion_name.clone(),
+                ))
                 .await
                 .expect("couldn't receive reply: get_upper_hand")
                 .map_err(|err| anyhow!("could not get the upper hand: {}", err))?;

@@ -23,7 +23,8 @@ async fn main() -> AnyResult<()> {
     adapters_secondary::chat::API::init()?;
 
     // Context
-    let fight_context = domain::fight::Context::new("fight_adapter", "chat_adapter");
+    let fight_context =
+        domain::fight::Context::new("fight_adapter", "chat_adapter", String::from("Rabire"));
 
     BASTION::start();
 
